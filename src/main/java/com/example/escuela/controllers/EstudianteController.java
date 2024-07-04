@@ -26,6 +26,12 @@ public class EstudianteController {
         return estudianteService.obtenerEstudiantes();
     }
 
+
+    @GetMapping("/estudiante/{id}")
+    public Estudiante obtenerEstudianteById(@PathVariable Long id){
+        return estudianteService.obtenerEstudianteById(id);
+    }
+
     /*@PostMapping("/estudiante")
     public ResponseEntity<Estudiante> crearEstudiante(@RequestBody Estudiante estudiante){
         if(estudiante.getNombre() == null || estudiante.getNombre.isEmpty){
@@ -47,5 +53,20 @@ public class EstudianteController {
         }
         Estudiante estudianteCreado = estudianteService.crearEstudiante(estudiante);
         return ResponseEntity.status(HttpStatus.CREATED).body(estudianteCreado);
+    }
+
+    @PutMapping("/estudiante/{id}")
+    public ResponseEntity<Estudiante> modificarEstudiante(@PathVariable Long id, @RequestBody Estudiante estudiante){
+        Estudiante estudianteModificado = estudianteService.modificarEstudiante(id,estudiante);
+        if(estudianteModificado==null){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+        return ResponseEntity.ok(estudianteModificado);
+    }
+
+    @DeleteMapping("/estudiante/{id}")
+    public ResponseEntity<?> eliminarEsudiante(@PathVariable Long id){
+        estudianteService.eliminarEstudiante(id);
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 }

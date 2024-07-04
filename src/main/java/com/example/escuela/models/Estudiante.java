@@ -20,13 +20,13 @@ public class Estudiante {
     private String nombre;
 
 
-    @NotNull(message = "Direccion nula")
+    /*@NotNull(message = "Direccion nula")
     @Size(min = 3, max = 5)
     private String direccion;
 
 
     @Email(message = "Direccion invalida")
-    private String mail;
+    private String mail;*/
 
 
 
@@ -37,8 +37,8 @@ public class Estudiante {
     public Estudiante(Long idEstudiante, String nombre, String direccion, String mail) {
         this.idEstudiante = idEstudiante;
         this.nombre = nombre;
-        this.direccion = direccion;
-        this.mail = mail;
+        /*this.direccion = direccion;
+        this.mail = mail;*/
     }
 
     public Long getIdEstudiante() {
@@ -57,21 +57,9 @@ public class Estudiante {
         this.nombre = nombre;
     }
 
-    public String getDireccion() {
-        return direccion;
-    }
 
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
-    }
 
-    public String getMail() {
-        return mail;
-    }
 
-    public void setMail(String mail) {
-        this.mail = mail;
-    }
 
     @Override
     public String toString() {

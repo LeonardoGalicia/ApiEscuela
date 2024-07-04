@@ -8,4 +8,5 @@ import java.util.List;
 public interface CursoServiceI {
     List<Curso> obtenerCursos();
     Curso obtenerCurso(Long id);
+
 }

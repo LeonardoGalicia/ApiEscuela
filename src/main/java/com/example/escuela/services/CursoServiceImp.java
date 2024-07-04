@@ -22,4 +22,6 @@ public class CursoServiceImp implements CursoServiceI{
     public Curso obtenerCurso(Long id) {
         return cursoRepository.findById(id).orElse(null);
     }
+
+
 }
